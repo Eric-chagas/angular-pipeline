@@ -12,7 +12,7 @@ RUN sed -i 's/IAP_TOKEN/substituteTOKEN/g' ./src/environments/environment.ts && 
 RUN ng build
 
 # BASE IMAGE with an alias #
-FROM nginx as runtime
+FROM nginx:1.25.0-alpine as runtime
 
 # Copy contents from the other container with alias "build" #
 # onto the specified path in the current container#
